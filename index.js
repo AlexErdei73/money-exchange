@@ -17,22 +17,23 @@ function generateOptions(currencies, selectElement) {
 generateOptions(currencies, inputCurrencySelectElement);
 generateOptions(currencies, outputCurrencySelectElement);
 
+function getPriceInUSD(currencies, pricesInUSD, currency) {
+	var currencyIndex = currencies.indexOf(currency);
+	var priceInUSD = pricesInUSD[currencyIndex];
+	return priceInUSD;
+}
+
 function calculateOutputValue(inputCurrency, outputCurrency, inputValue) {
-	//The next two lines does something
-	var inputCurrencyIndex = currencies.indexOf(inputCurrency);
-	var inputCurrencyPriceInUSD = pricesInUSD[inputCurrencyIndex];
-
-	//These two lines does almost the same as the previous two
-	//You can make one function to replace these lines to make
-	//code DRY = Do Not Repeat Yourself
-	var outputCurrencyIndex = currencies.indexOf(outputCurrency);
-	var outputCurrencyPriceInUSD = pricesInUSD[outputCurrencyIndex];
-
-	//var currencyAmount = document.getElementById('currency-amount').value;
-	//Above line is bad, because the code should use inputValue parameter
-	//to avoid DOM manipulation code in this function. Here we ONLY
-	//calculate
-
+	var inputCurrencyPriceInUSD = getPriceInUSD(
+		currencies,
+		pricesInUSD,
+		inputCurrency
+	);
+	var outputCurrencyPriceInUSD = getPriceInUSD(
+		currencies,
+		pricesInUSD,
+		outputCurrency
+	);
 	var outputValue =
 		(inputValue * inputCurrencyPriceInUSD) / outputCurrencyPriceInUSD;
 	return outputValue;
@@ -46,8 +47,6 @@ formElement.addEventListener("submit", function (event) {
 	var userOutputCurrency = outputCurrencySelectElement.value;
 	var userInputValue = formElement.querySelector("input").value;
 
-	//document.getElementById("text").innerHTML = (calculateOutputValue(userInputCurrency, userOutputCurrency, userInputValue));
-	//innerHTML is working, but better to use textContent
 	var h1Element = document.getElementById("output-text");
 	h1Element.textContent = calculateOutputValue(
 		userInputCurrency,
