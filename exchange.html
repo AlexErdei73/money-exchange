@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=h1, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Money Exchane</title>
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li class="logo"><a href="./index.html">MONEY EXCHANGE</a></li>
-        <li><a href="./about.html">About</a></li>
-        <li><a href="./exchange.html">Money Exchange</a></li>
-      </ul>
-    </nav>
-    <h1>Exchange Page</h1>
-    <form>
-      <label for="input-currency">Input Currency*</label>
-      <select name="input-currency" id="input-currency"></select>
-      <br />
-      <label for="output-currency">Input Currency*</label>
-      <select name="output-currency" id="output-currency"></select>
-      <br />
-      <label for="currency-amount">Currency Amount*</label>
-      <input type="number" name="amount" id="currency-amount" />
-      <br />
-      <button type="submit">Submit</button>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=h1, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>Money Exchane</title>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li class="logo"><a href="./index.html">MONEY EXCHANGE</a></li>
+				<li><a href="./about.html">About</a></li>
+				<li><a href="./exchange.html">Money Exchange</a></li>
+			</ul>
+		</nav>
+		<h1>Exchange Page</h1>
+		<form>
+			<label for="input-currency">Input Currency*</label>
+			<select name="input-currency" id="input-currency"></select>
+			<br />
+			<label for="output-currency">Input Currency*</label>
+			<select name="output-currency" id="output-currency"></select>
+			<br />
+			<label for="currency-amount">Currency Amount*</label>
+			<input type="number" name="amount" id="currency-amount" />
+			<br />
+			<button type="submit">Submit</button>
 
-      <h1 id="text"></h1>
-    </form>
-    <script src="index.js">
-    
-    </script>
-  </body>
+			<h1 id="output-text"></h1>
+		</form>
+		<script src="index.js"></script>
+	</body>
 </html>
