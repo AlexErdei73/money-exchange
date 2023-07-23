@@ -17,12 +17,6 @@ function generateOptions(currencies, selectElement) {
 generateOptions(currencies, inputCurrencySelectElement);
 generateOptions(currencies, outputCurrencySelectElement);
 
-var formElement = document.querySelector("form");
-formElement.addEventListener("submit", function (event) {
-  event.preventDefault();
-  console.log("hello world");
-});
-
 
 function calculateOutputValue(inputCurrency, outputCurrency, inputValue){
   var inputCurrencyIndex = currencies.indexOf(inputCurrency);
@@ -36,7 +30,19 @@ function calculateOutputValue(inputCurrency, outputCurrency, inputValue){
   return outputValue; 
 }
 
+var formElement = document.querySelector("form");
+formElement.addEventListener("submit", function (event) {
+  event.preventDefault();
 
+  var userInputCurrency = inputCurrencySelectElement.value;
+  var userOutputCurrency = outputCurrencySelectElement.value;
+  var userInputValue = formElement.querySelector("input").value;
+  
+
+  
+  document.getElementById("text").innerHTML = (calculateOutputValue(userInputCurrency, userOutputCurrency, userInputValue));
+  
+});
 
 
 
