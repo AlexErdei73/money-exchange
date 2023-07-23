@@ -22,3 +22,33 @@ formElement.addEventListener("submit", function (event) {
   event.preventDefault();
   console.log("hello world");
 });
+
+
+function calculateOutputValue(inputCurrency, outputCurrency, inputValue){
+  var inputCurrencyIndex = currencies.indexOf(inputCurrency);
+  var outputCurrencyIndex = currencies.indexOf(outputCurrency);
+  var currencyAmount = document.getElementById('currency-amount').value;
+
+
+  var rateInUSD = pricesInUSD[inputCurrencyIndex];
+  var rateInOutputCurrency = pricesInUSD[outputCurrencyIndex];
+  var outputValue = (currencyAmount * rateInUSD) / rateInOutputCurrency;
+  return outputValue; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
