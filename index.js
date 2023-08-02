@@ -39,6 +39,10 @@ function calculateOutputValue(inputCurrency, outputCurrency, inputValue) {
 	return outputValue;
 }
 
+function getOutputText(inputValue, inputCurrency, outputValue, outputCurrency) {
+	return `${inputValue}${inputCurrency} = ${outputValue}${outputCurrency}`;
+}
+
 var formElement = document.querySelector("form");
 formElement.addEventListener("submit", function (event) {
 	event.preventDefault();
@@ -48,9 +52,10 @@ formElement.addEventListener("submit", function (event) {
 	var userInputValue = formElement.querySelector("input").value;
 
 	var h1Element = document.getElementById("output-text");
-	h1Element.textContent = calculateOutputValue(
+	h1Element.textContent = getOutputText(
+		userInputValue,
 		userInputCurrency,
-		userOutputCurrency,
-		userInputValue
+		calculateOutputValue(userInputCurrency, userOutputCurrency, userInputValue),
+		userOutputCurrency
 	);
 });
