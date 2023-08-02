@@ -55,7 +55,11 @@ formElement.addEventListener("submit", function (event) {
 	h1Element.textContent = getOutputText(
 		userInputValue,
 		userInputCurrency,
-		calculateOutputValue(userInputCurrency, userOutputCurrency, userInputValue),
+		calculateOutputValue(
+			userInputCurrency,
+			userOutputCurrency,
+			userInputValue
+		).toFixed(2),
 		userOutputCurrency
 	);
 });
