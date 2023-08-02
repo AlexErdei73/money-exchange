@@ -17,15 +17,21 @@
 		<article class="form-container">
 			<h1 id="output-text"></h1>
 			<form>
-				<label for="input-currency">Input Currency*</label>
-				<select name="input-currency" id="input-currency"></select>
-				<br />
-				<label for="output-currency">Input Currency*</label>
-				<select name="output-currency" id="output-currency"></select>
-				<br />
-				<label for="currency-amount">Currency Amount*</label>
-				<input type="number" name="amount" id="currency-amount" required />
-				<br />
+				<div class="form-control">
+					<label for="input-currency">Input Currency*</label>
+					<select name="input-currency" id="input-currency"></select>
+				</div>
+
+				<div class="form-control">
+					<label for="output-currency">Input Currency*</label>
+					<select name="output-currency" id="output-currency"></select>
+				</div>
+
+				<div class="form-control">
+					<label for="currency-amount">Currency Amount*</label>
+					<input type="number" name="amount" id="currency-amount" required />
+				</div>
+
 				<button type="submit">Submit</button>
 			</form>
 		</article>
