@@ -7,15 +7,13 @@
 }
 
 body {
-	height: 100vh;
+	margin-top: 2rem;
+	height: calc(100vh - 2rem);
+	overflow: scroll;
 	background-color: rgb(0, 0, 0);
 	color: white;
 	font-family: "Poppins", sans-serif;
 	font-weight: 400;
-}
-
-.no-scroll {
-	overflow: hidden;
 }
 
 nav {
@@ -60,6 +58,11 @@ img {
 	margin: auto;
 }
 
-article {
-	margin-top: 2.5rem;
+.form-container {
+	height: 100%;
+	min-height: 150px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
