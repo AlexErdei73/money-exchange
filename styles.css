@@ -43,8 +43,6 @@ nav li {
 	list-style: none;
 	color: black;
 	cursor: pointer;
-	transition: 0.5s ease-in-out;
-	text-transform: uppercase;
 }
 
 nav a:hover {
