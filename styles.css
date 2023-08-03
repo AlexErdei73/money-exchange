@@ -7,8 +7,8 @@
 }
 
 body {
-	margin-top: 2rem;
-	height: calc(100vh - 2rem);
+	margin-top: 2.4rem;
+	height: calc(100vh - 2.4rem);
 	overflow: scroll;
 	background-color: rgb(0, 0, 0);
 	color: white;
@@ -21,8 +21,9 @@ nav {
 	top: 0;
 	width: 100%;
 	background-color: rgb(161, 158, 108);
-	padding: 0.3rem;
+	padding: 0.5rem;
 	color: white;
+	opacity: 1;
 }
 
 nav ul {
@@ -49,6 +50,12 @@ nav a:hover {
 
 .logo {
 	flex-basis: 220px;
+}
+
+article {
+	height: 100%;
+	opacity: 0;
+	transition: opacity 900ms linear;
 }
 
 img {
@@ -116,4 +123,8 @@ form button {
 
 form button:hover {
 	background: rgb(8, 8, 95);
+}
+
+.visible {
+	opacity: 1;
 }
