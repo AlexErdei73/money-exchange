@@ -22,7 +22,7 @@ function getPriceInUSD(currencies, pricesInUSD, currency) {
 	var priceInUSD = pricesInUSD[currencyIndex];
 	return priceInUSD;
 }
-
+	
 function calculateOutputValue(inputCurrency, outputCurrency, inputValue) {
 	var inputCurrencyPriceInUSD = getPriceInUSD(
 		currencies,
@@ -48,9 +48,6 @@ formElement.addEventListener("submit", function (event) {
 	var userInputValue = formElement.querySelector("input").value;
 
 	var h1Element = document.getElementById("output-text");
-	h1Element.textContent = calculateOutputValue(
-		userInputCurrency,
-		userOutputCurrency,
-		userInputValue
-	);
+	var outputValue = calculateOutputValue(userInputCurrency, userOutputCurrency, userInputValue);
+	h1Element.textContent = `${userInputValue}${userInputCurrency} = ${outputValue}${userOutputCurrency}`;		
 });
