@@ -29,9 +29,25 @@ nav ul {
 	justify-content: flex-start;
 }
 
-nav a {
+a {
+	position: relative;
 	text-decoration: none;
 	color: black;
+}
+
+a::after{
+	content: "";
+	position: absolute;
+	background-color: black;
+	height: 3px;
+	width : 0%;
+	left: 0;
+	bottom: -1px;
+	transition: .3s ease-in-out;
+}
+
+a:hover:after{
+	width: 100%;
 }
 
 nav li {
@@ -44,9 +60,6 @@ nav li {
 	text-transform: uppercase;
 }
 
-nav a:hover {
-	color: rgb(255, 255, 255);
-}
 
 .logo {
 	flex-basis: 220px;
@@ -61,4 +74,57 @@ img {
 
 h1 {
 	margin-top: 2.5rem;
+}
+.h1 {
+	display: flex;
+	justify-content: center;
+}
+.container {
+	background-color: rgb(58, 56, 170);
+	max-width: 290px;
+	margin: auto;
+	border: 3px solid rgb(245, 146, 128);
+}
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+form label {
+	margin-bottom: 10px;
+}
+
+form select{
+	width: 75%;
+	height: 30px;
+	border-radius: 5px;
+	background-color: rgb(161, 158, 108);
+	border-color: transparent;
+	color: white;
+	cursor: pointer;
+}
+
+form input {
+	width: 75%;
+	background-color: rgb(161, 158, 108);
+	height: 30px;
+	border-radius: 5px;
+	border-color: transparent;
+	color: white;
+	font-size: 18px;
+}
+
+#in-cu { 
+	margin-top: 25px;
+}
+
+button {
+	background-color: rgb(56, 162, 248);
+	padding: 10px 30px;
+	border: 2px solid white;
+	border-radius: 8%;
+	color: white;
+	cursor: pointer;
 }
