@@ -48,6 +48,9 @@ formElement.addEventListener("submit", function (event) {
 	var userInputValue = formElement.querySelector("input").value;
 
 	var h1Element = document.getElementById("output-text");
-	var outputValue = calculateOutputValue(userInputCurrency, userOutputCurrency, userInputValue);
-	h1Element.textContent = `${userInputValue}${userInputCurrency} = ${outputValue}${userOutputCurrency}`;		
+	var outputValue = calculateOutputValue(userInputCurrency, userOutputCurrency, userInputValue).toFixed(2);
+	
+	h1Element.textContent = `${userInputValue}${userInputCurrency} = ${outputValue}${userOutputCurrency}`;	
+	
+	
 });
