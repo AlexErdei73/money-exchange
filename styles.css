@@ -128,3 +128,8 @@ button {
 	color: white;
 	cursor: pointer;
 }
+
+#output-text {
+	text-align: center;
+	margin: auto;
+}
